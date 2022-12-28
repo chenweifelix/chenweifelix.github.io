@@ -1,0 +1,4 @@
+"0","#loading in packages "
+"0","library(tidyverse)"
+"0","#take a look at data "
+"0","head(iris) #built-in data in R "

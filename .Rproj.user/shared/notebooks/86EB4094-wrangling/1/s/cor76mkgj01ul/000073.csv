@@ -1,0 +1,6 @@
+"0",""
+"0","## If the vars are character "
+"0","temp_df %>% select(Species) %>% "
+"0","    mutate(Species = "
+"0","           case_when(Species == ""NONE"" ~ NA_character_, "
+"0","                     T ~ Species))"

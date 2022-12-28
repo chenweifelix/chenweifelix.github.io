@@ -1,0 +1,15 @@
+theme: hugo-theme-red-rose
+baseURL: http://example.org/
+languageCode: en
+title: Felix (Chen-Wei) Yu
+PygmentsCodeFences: yes
+PygmentsStyle: solarized-dark256
+pluralizelisttitles: 'false'
+paginate: 2
+disableHugoGeneratorInject: yes
+params:
+  ava: /img/profile.JPG
+module:
+  hugoVersion:
+    extended: yes
+    min: 0.55.0

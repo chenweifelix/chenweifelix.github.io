@@ -1,0 +1,21 @@
+"0","```r
+temp = prop.test(x = c(5362*.275,8225*.267), n = c(5362, 8225), correct = F)
+temp
+```"
+"1","
+	2-sample test for equality of proportions without continuity correction
+
+data:  c(5362 * 0.275, 8225 * 0.267) out of c(5362, 8225)
+X-squared = 1.0536, df = 1, p-value = 0.3047
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.007304998  0.023304998
+sample estimates:
+prop 1 prop 2 
+ 0.275  0.267 
+"
+"0","```r
+cat(\"The lower ound of the 95%CI is \", temp$conf.int[1], \"and the higher bound is \", temp$conf.int[2])
+```"
+"1","The lower ound of the 95%CI is  -0.007304998 and the higher bound is  0.023305
+"

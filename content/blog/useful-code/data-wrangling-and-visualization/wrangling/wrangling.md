@@ -1,0 +1,744 @@
+---
+title: "Data Wrangling—R"
+output: 
+  html_notebook:
+    
+    toc: yes
+    toc_float: 
+      collapsed: false
+    theme: readable
+author: Felix Yu 
+date: 2022-12-12 
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Basic setting
+
+
+```r
+#loading in packages 
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+## ✔ readr   2.1.3      ✔ forcats 0.5.2 
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+```
+
+```r
+#take a look at data 
+head(iris) #built-in data in R 
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+```r
+str(iris)
+```
+
+```
+## 'data.frame':	150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+```
+
+# Recode data values 
+
+## Value 
+If in the dataset, a specific value means missing data (e.g., 999), we need to recode it as such before putting the varables in the model
+
+```r
+# Include values in the dataset 
+temp_df = 
+  tibble(Sepal.Length = 999, Sepal.Width = 999, Petal.Length = 999, Petal.Width = 999, Species = "NONE") %>% 
+  bind_rows(iris)
+temp_df
+```
+
+```
+## # A tibble: 151 × 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+##  1        999         999          999         999   NONE   
+##  2          5.1         3.5          1.4         0.2 setosa 
+##  3          4.9         3            1.4         0.2 setosa 
+##  4          4.7         3.2          1.3         0.2 setosa 
+##  5          4.6         3.1          1.5         0.2 setosa 
+##  6          5           3.6          1.4         0.2 setosa 
+##  7          5.4         3.9          1.7         0.4 setosa 
+##  8          4.6         3.4          1.4         0.3 setosa 
+##  9          5           3.4          1.5         0.2 setosa 
+## 10          4.4         2.9          1.4         0.2 setosa 
+## # … with 141 more rows
+```
+
+```r
+# Recode one variable 
+temp_df %>% 
+  mutate(Sepal.Length = 
+           case_when(Sepal.Length == 999 ~ NaN, 
+                     T ~ Sepal.Length))
+```
+
+```
+## # A tibble: 151 × 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+##  1        NaN         999          999         999   NONE   
+##  2          5.1         3.5          1.4         0.2 setosa 
+##  3          4.9         3            1.4         0.2 setosa 
+##  4          4.7         3.2          1.3         0.2 setosa 
+##  5          4.6         3.1          1.5         0.2 setosa 
+##  6          5           3.6          1.4         0.2 setosa 
+##  7          5.4         3.9          1.7         0.4 setosa 
+##  8          4.6         3.4          1.4         0.3 setosa 
+##  9          5           3.4          1.5         0.2 setosa 
+## 10          4.4         2.9          1.4         0.2 setosa 
+## # … with 141 more rows
+```
+
+```r
+## If the vars are character 
+temp_df %>% select(Species) %>% 
+    mutate(Species = 
+           case_when(Species == "NONE" ~ NA_character_, 
+                     T ~ Species))
+```
+
+```
+## # A tibble: 151 × 1
+##    Species
+##    <chr>  
+##  1 <NA>   
+##  2 setosa 
+##  3 setosa 
+##  4 setosa 
+##  5 setosa 
+##  6 setosa 
+##  7 setosa 
+##  8 setosa 
+##  9 setosa 
+## 10 setosa 
+## # … with 141 more rows
+```
+
+```r
+## If the vars are numeric  
+temp_df %>% select(-Species) %>% 
+  mutate(across(
+        .cols = everything(),
+        ~recode( ., `999` = NaN)
+    ))
+```
+
+```
+## # A tibble: 151 × 4
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width
+##           <dbl>       <dbl>        <dbl>       <dbl>
+##  1        NaN         NaN          NaN         NaN  
+##  2          5.1         3.5          1.4         0.2
+##  3          4.9         3            1.4         0.2
+##  4          4.7         3.2          1.3         0.2
+##  5          4.6         3.1          1.5         0.2
+##  6          5           3.6          1.4         0.2
+##  7          5.4         3.9          1.7         0.4
+##  8          4.6         3.4          1.4         0.3
+##  9          5           3.4          1.5         0.2
+## 10          4.4         2.9          1.4         0.2
+## # … with 141 more rows
+```
+
+```r
+## Combine 
+temp_df %>% 
+  mutate(across(.cols = where(is.character), 
+                .fns = ~recode( ., "NONE" = NA_character_))) %>% 
+  mutate(across(.cols = where(is.numeric), 
+                .fns = ~recode(., `999` = NaN))) 
+```
+
+```
+## # A tibble: 151 × 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+##  1        NaN         NaN          NaN         NaN   <NA>   
+##  2          5.1         3.5          1.4         0.2 setosa 
+##  3          4.9         3            1.4         0.2 setosa 
+##  4          4.7         3.2          1.3         0.2 setosa 
+##  5          4.6         3.1          1.5         0.2 setosa 
+##  6          5           3.6          1.4         0.2 setosa 
+##  7          5.4         3.9          1.7         0.4 setosa 
+##  8          4.6         3.4          1.4         0.3 setosa 
+##  9          5           3.4          1.5         0.2 setosa 
+## 10          4.4         2.9          1.4         0.2 setosa 
+## # … with 141 more rows
+```
+
+
+## Text 
+Let's suppose we want `Species` to be coded with the first letter being captital. 
+
+
+```r
+iris %>% select(Species)
+```
+
+```
+##        Species
+## 1       setosa
+## 2       setosa
+## 3       setosa
+## 4       setosa
+## 5       setosa
+## 6       setosa
+## 7       setosa
+## 8       setosa
+## 9       setosa
+## 10      setosa
+## 11      setosa
+## 12      setosa
+## 13      setosa
+## 14      setosa
+## 15      setosa
+## 16      setosa
+## 17      setosa
+## 18      setosa
+## 19      setosa
+## 20      setosa
+## 21      setosa
+## 22      setosa
+## 23      setosa
+## 24      setosa
+## 25      setosa
+## 26      setosa
+## 27      setosa
+## 28      setosa
+## 29      setosa
+## 30      setosa
+## 31      setosa
+## 32      setosa
+## 33      setosa
+## 34      setosa
+## 35      setosa
+## 36      setosa
+## 37      setosa
+## 38      setosa
+## 39      setosa
+## 40      setosa
+## 41      setosa
+## 42      setosa
+## 43      setosa
+## 44      setosa
+## 45      setosa
+## 46      setosa
+## 47      setosa
+## 48      setosa
+## 49      setosa
+## 50      setosa
+## 51  versicolor
+## 52  versicolor
+## 53  versicolor
+## 54  versicolor
+## 55  versicolor
+## 56  versicolor
+## 57  versicolor
+## 58  versicolor
+## 59  versicolor
+## 60  versicolor
+## 61  versicolor
+## 62  versicolor
+## 63  versicolor
+## 64  versicolor
+## 65  versicolor
+## 66  versicolor
+## 67  versicolor
+## 68  versicolor
+## 69  versicolor
+## 70  versicolor
+## 71  versicolor
+## 72  versicolor
+## 73  versicolor
+## 74  versicolor
+## 75  versicolor
+## 76  versicolor
+## 77  versicolor
+## 78  versicolor
+## 79  versicolor
+## 80  versicolor
+## 81  versicolor
+## 82  versicolor
+## 83  versicolor
+## 84  versicolor
+## 85  versicolor
+## 86  versicolor
+## 87  versicolor
+## 88  versicolor
+## 89  versicolor
+## 90  versicolor
+## 91  versicolor
+## 92  versicolor
+## 93  versicolor
+## 94  versicolor
+## 95  versicolor
+## 96  versicolor
+## 97  versicolor
+## 98  versicolor
+## 99  versicolor
+## 100 versicolor
+## 101  virginica
+## 102  virginica
+## 103  virginica
+## 104  virginica
+## 105  virginica
+## 106  virginica
+## 107  virginica
+## 108  virginica
+## 109  virginica
+## 110  virginica
+## 111  virginica
+## 112  virginica
+## 113  virginica
+## 114  virginica
+## 115  virginica
+## 116  virginica
+## 117  virginica
+## 118  virginica
+## 119  virginica
+## 120  virginica
+## 121  virginica
+## 122  virginica
+## 123  virginica
+## 124  virginica
+## 125  virginica
+## 126  virginica
+## 127  virginica
+## 128  virginica
+## 129  virginica
+## 130  virginica
+## 131  virginica
+## 132  virginica
+## 133  virginica
+## 134  virginica
+## 135  virginica
+## 136  virginica
+## 137  virginica
+## 138  virginica
+## 139  virginica
+## 140  virginica
+## 141  virginica
+## 142  virginica
+## 143  virginica
+## 144  virginica
+## 145  virginica
+## 146  virginica
+## 147  virginica
+## 148  virginica
+## 149  virginica
+## 150  virginica
+```
+
+```r
+# Method 1: Manually recode each value 
+iris %>% 
+  mutate(Species = recode(Species, 
+                          setosa = "Setosa", 
+                          versicolor = "Versicolor", 
+                          virginica = "Virginica")) %>% 
+  select(Species)
+```
+
+```
+##        Species
+## 1       Setosa
+## 2       Setosa
+## 3       Setosa
+## 4       Setosa
+## 5       Setosa
+## 6       Setosa
+## 7       Setosa
+## 8       Setosa
+## 9       Setosa
+## 10      Setosa
+## 11      Setosa
+## 12      Setosa
+## 13      Setosa
+## 14      Setosa
+## 15      Setosa
+## 16      Setosa
+## 17      Setosa
+## 18      Setosa
+## 19      Setosa
+## 20      Setosa
+## 21      Setosa
+## 22      Setosa
+## 23      Setosa
+## 24      Setosa
+## 25      Setosa
+## 26      Setosa
+## 27      Setosa
+## 28      Setosa
+## 29      Setosa
+## 30      Setosa
+## 31      Setosa
+## 32      Setosa
+## 33      Setosa
+## 34      Setosa
+## 35      Setosa
+## 36      Setosa
+## 37      Setosa
+## 38      Setosa
+## 39      Setosa
+## 40      Setosa
+## 41      Setosa
+## 42      Setosa
+## 43      Setosa
+## 44      Setosa
+## 45      Setosa
+## 46      Setosa
+## 47      Setosa
+## 48      Setosa
+## 49      Setosa
+## 50      Setosa
+## 51  Versicolor
+## 52  Versicolor
+## 53  Versicolor
+## 54  Versicolor
+## 55  Versicolor
+## 56  Versicolor
+## 57  Versicolor
+## 58  Versicolor
+## 59  Versicolor
+## 60  Versicolor
+## 61  Versicolor
+## 62  Versicolor
+## 63  Versicolor
+## 64  Versicolor
+## 65  Versicolor
+## 66  Versicolor
+## 67  Versicolor
+## 68  Versicolor
+## 69  Versicolor
+## 70  Versicolor
+## 71  Versicolor
+## 72  Versicolor
+## 73  Versicolor
+## 74  Versicolor
+## 75  Versicolor
+## 76  Versicolor
+## 77  Versicolor
+## 78  Versicolor
+## 79  Versicolor
+## 80  Versicolor
+## 81  Versicolor
+## 82  Versicolor
+## 83  Versicolor
+## 84  Versicolor
+## 85  Versicolor
+## 86  Versicolor
+## 87  Versicolor
+## 88  Versicolor
+## 89  Versicolor
+## 90  Versicolor
+## 91  Versicolor
+## 92  Versicolor
+## 93  Versicolor
+## 94  Versicolor
+## 95  Versicolor
+## 96  Versicolor
+## 97  Versicolor
+## 98  Versicolor
+## 99  Versicolor
+## 100 Versicolor
+## 101  Virginica
+## 102  Virginica
+## 103  Virginica
+## 104  Virginica
+## 105  Virginica
+## 106  Virginica
+## 107  Virginica
+## 108  Virginica
+## 109  Virginica
+## 110  Virginica
+## 111  Virginica
+## 112  Virginica
+## 113  Virginica
+## 114  Virginica
+## 115  Virginica
+## 116  Virginica
+## 117  Virginica
+## 118  Virginica
+## 119  Virginica
+## 120  Virginica
+## 121  Virginica
+## 122  Virginica
+## 123  Virginica
+## 124  Virginica
+## 125  Virginica
+## 126  Virginica
+## 127  Virginica
+## 128  Virginica
+## 129  Virginica
+## 130  Virginica
+## 131  Virginica
+## 132  Virginica
+## 133  Virginica
+## 134  Virginica
+## 135  Virginica
+## 136  Virginica
+## 137  Virginica
+## 138  Virginica
+## 139  Virginica
+## 140  Virginica
+## 141  Virginica
+## 142  Virginica
+## 143  Virginica
+## 144  Virginica
+## 145  Virginica
+## 146  Virginica
+## 147  Virginica
+## 148  Virginica
+## 149  Virginica
+## 150  Virginica
+```
+
+```r
+# Method 2 : Use regular expression 
+iris %>% 
+  mutate(Species = stringr::str_to_title(Species)) %>% 
+  select(Species)
+```
+
+```
+##        Species
+## 1       Setosa
+## 2       Setosa
+## 3       Setosa
+## 4       Setosa
+## 5       Setosa
+## 6       Setosa
+## 7       Setosa
+## 8       Setosa
+## 9       Setosa
+## 10      Setosa
+## 11      Setosa
+## 12      Setosa
+## 13      Setosa
+## 14      Setosa
+## 15      Setosa
+## 16      Setosa
+## 17      Setosa
+## 18      Setosa
+## 19      Setosa
+## 20      Setosa
+## 21      Setosa
+## 22      Setosa
+## 23      Setosa
+## 24      Setosa
+## 25      Setosa
+## 26      Setosa
+## 27      Setosa
+## 28      Setosa
+## 29      Setosa
+## 30      Setosa
+## 31      Setosa
+## 32      Setosa
+## 33      Setosa
+## 34      Setosa
+## 35      Setosa
+## 36      Setosa
+## 37      Setosa
+## 38      Setosa
+## 39      Setosa
+## 40      Setosa
+## 41      Setosa
+## 42      Setosa
+## 43      Setosa
+## 44      Setosa
+## 45      Setosa
+## 46      Setosa
+## 47      Setosa
+## 48      Setosa
+## 49      Setosa
+## 50      Setosa
+## 51  Versicolor
+## 52  Versicolor
+## 53  Versicolor
+## 54  Versicolor
+## 55  Versicolor
+## 56  Versicolor
+## 57  Versicolor
+## 58  Versicolor
+## 59  Versicolor
+## 60  Versicolor
+## 61  Versicolor
+## 62  Versicolor
+## 63  Versicolor
+## 64  Versicolor
+## 65  Versicolor
+## 66  Versicolor
+## 67  Versicolor
+## 68  Versicolor
+## 69  Versicolor
+## 70  Versicolor
+## 71  Versicolor
+## 72  Versicolor
+## 73  Versicolor
+## 74  Versicolor
+## 75  Versicolor
+## 76  Versicolor
+## 77  Versicolor
+## 78  Versicolor
+## 79  Versicolor
+## 80  Versicolor
+## 81  Versicolor
+## 82  Versicolor
+## 83  Versicolor
+## 84  Versicolor
+## 85  Versicolor
+## 86  Versicolor
+## 87  Versicolor
+## 88  Versicolor
+## 89  Versicolor
+## 90  Versicolor
+## 91  Versicolor
+## 92  Versicolor
+## 93  Versicolor
+## 94  Versicolor
+## 95  Versicolor
+## 96  Versicolor
+## 97  Versicolor
+## 98  Versicolor
+## 99  Versicolor
+## 100 Versicolor
+## 101  Virginica
+## 102  Virginica
+## 103  Virginica
+## 104  Virginica
+## 105  Virginica
+## 106  Virginica
+## 107  Virginica
+## 108  Virginica
+## 109  Virginica
+## 110  Virginica
+## 111  Virginica
+## 112  Virginica
+## 113  Virginica
+## 114  Virginica
+## 115  Virginica
+## 116  Virginica
+## 117  Virginica
+## 118  Virginica
+## 119  Virginica
+## 120  Virginica
+## 121  Virginica
+## 122  Virginica
+## 123  Virginica
+## 124  Virginica
+## 125  Virginica
+## 126  Virginica
+## 127  Virginica
+## 128  Virginica
+## 129  Virginica
+## 130  Virginica
+## 131  Virginica
+## 132  Virginica
+## 133  Virginica
+## 134  Virginica
+## 135  Virginica
+## 136  Virginica
+## 137  Virginica
+## 138  Virginica
+## 139  Virginica
+## 140  Virginica
+## 141  Virginica
+## 142  Virginica
+## 143  Virginica
+## 144  Virginica
+## 145  Virginica
+## 146  Virginica
+## 147  Virginica
+## 148  Virginica
+## 149  Virginica
+## 150  Virginica
+```
+
+## Relevel  
+
+In linear regression, it is common for categorical variables to be dummy coded before being enterd in the model. To faciliate the interpretation of the regression coefficient, the reference point of the dummy variable is important. Here, let's consider the case of Species as a dummy variable. 
+
+I first remove the level `virginica` and consider only the levels `setosa` and `versicolor` of this variable. 
+
+```r
+temp_df = iris %>% filter(!Species == "virginica")
+summary(lm(Sepal.Length ~ Species, temp_df)) 
+```
+
+```
+## 
+## Call:
+## lm(formula = Sepal.Length ~ Species, data = temp_df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.0360 -0.3135 -0.0060  0.2715  1.0640 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)        5.00600    0.06250   80.09   <2e-16 ***
+## Speciesversicolor  0.93000    0.08839   10.52   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.442 on 98 degrees of freedom
+## Multiple R-squared:  0.5304,	Adjusted R-squared:  0.5256 
+## F-statistic: 110.7 on 1 and 98 DF,  p-value: < 2.2e-16
+```
+Judging from the model summary, I know that the model treats `setosa` as 0 and `versicolor` as 1. 
+
+If, however, I would like to treat `versicolor` as 0 instead. 
+
+```r
+temp_df = temp_df %>% mutate(Species = relevel(Species, ref = "versicolor"))
+summary(lm(Sepal.Length ~ Species, temp_df)) 
+```
+
+```
+## 
+## Call:
+## lm(formula = Sepal.Length ~ Species, data = temp_df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.0360 -0.3135 -0.0060  0.2715  1.0640 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    5.93600    0.06250   94.97   <2e-16 ***
+## Speciessetosa -0.93000    0.08839  -10.52   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.442 on 98 degrees of freedom
+## Multiple R-squared:  0.5304,	Adjusted R-squared:  0.5256 
+## F-statistic: 110.7 on 1 and 98 DF,  p-value: < 2.2e-16
+```
+
+The model now treats `versicolor` as the reference point. The exact same absoule value of the regression coefficients confirms the reuslt. 

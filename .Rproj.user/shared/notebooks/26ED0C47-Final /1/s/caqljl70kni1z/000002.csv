@@ -1,0 +1,39 @@
+"0","```r
+non_white_stat = temp %>% summarise(non_white_sample_n = sum(n), non_white_pov_n = sum(pov_n)) %>% matrix()
+white_stat = df %>% filter(race == \"White\") %>% select(n, pov_n) %>% matrix()
+#The poverty rate is calculated as the ratio of the number of people in poverty to the entire population. This “old” method is still the official poverty measure.
+
+non_white_stat
+```"
+"1","     [,1]    
+[1,] 15951   
+[2,] 3956.669
+"
+"0","```r
+white_stat
+```"
+"1","     [,1]  
+[1,] 26896 
+[2,] 2689.6
+"
+"0","```r
+temp2 = prop.test(x = c(non_white_stat[[2]],white_stat[[2]]), n = c(non_white_stat[[1]], white_stat[[1]]), correct = F)
+temp2
+```"
+"1","
+	2-sample test for equality of proportions without continuity correction
+
+data:  c(non_white_stat[[2]], white_stat[[2]]) out of c(non_white_stat[[1]], white_stat[[1]])
+X-squared = 1674.7, df = 1, p-value < 2.2e-16
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ 0.1404505 0.1556524
+sample estimates:
+   prop 1    prop 2 
+0.2480515 0.1000000 
+"
+"0","```r
+cat(\"The lower ound of the 95%CI is \", temp2$conf.int[1], \"and the higher bound is \", temp2$conf.int[2])
+```"
+"1","The lower ound of the 95%CI is  0.1404505 and the higher bound is  0.1556524
+"

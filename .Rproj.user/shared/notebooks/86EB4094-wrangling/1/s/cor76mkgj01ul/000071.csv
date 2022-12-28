@@ -1,0 +1,5 @@
+"0","# Recode one variable "
+"0","temp_df %>% "
+"0","  mutate(Sepal.Length = "
+"0","           case_when(Sepal.Length == 999 ~ NaN, "
+"0","                     T ~ Sepal.Length))"

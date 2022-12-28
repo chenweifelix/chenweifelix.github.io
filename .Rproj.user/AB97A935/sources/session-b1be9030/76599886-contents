@@ -1,0 +1,94 @@
+---
+title: "Data Wrangling—R"
+output: 
+  html_notebook:
+    toc: yes
+    toc_float: 
+      collapsed: false
+    
+    theme: readable
+author: Felix Yu 
+date: 2022-12-12 
+---
+
+# Basic setting
+
+```{r}
+#loading in packages 
+library(tidyverse)
+#take a look at data 
+head(iris) #built-in data in R 
+str(iris)
+```
+
+# Recode data values 
+
+## Value 
+If in the dataset, a specific value means missing data (e.g., 999), we need to recode it as such before putting the varables in the model
+```{r}
+# Include values in the dataset 
+temp_df = 
+  tibble(Sepal.Length = 999, Sepal.Width = 999, Petal.Length = 999, Petal.Width = 999, Species = "NONE") %>% 
+  bind_rows(iris)
+temp_df
+# Recode one variable 
+temp_df %>% 
+  mutate(Sepal.Length = 
+           case_when(Sepal.Length == 999 ~ NaN, 
+                     T ~ Sepal.Length))
+## If the vars are character 
+temp_df %>% select(Species) %>% 
+    mutate(Species = 
+           case_when(Species == "NONE" ~ NA_character_, 
+                     T ~ Species))
+## If the vars are numeric  
+temp_df %>% select(-Species) %>% 
+  mutate(across(
+        .cols = everything(),
+        ~recode( ., `999` = NaN)
+    ))
+## Combine 
+temp_df %>% 
+  mutate(across(.cols = where(is.character), 
+                .fns = ~recode( ., "NONE" = NA_character_))) %>% 
+  mutate(across(.cols = where(is.numeric), 
+                .fns = ~recode(., `999` = NaN))) 
+```
+
+
+## Text 
+Let's suppose we want `Species` to be coded with the first letter being captital. 
+
+```{r}
+iris %>% select(Species)
+# Method 1: Manually recode each value 
+iris %>% 
+  mutate(Species = recode(Species, 
+                          setosa = "Setosa", 
+                          versicolor = "Versicolor", 
+                          virginica = "Virginica")) %>% 
+  select(Species)
+# Method 2 : Use regular expression 
+iris %>% 
+  mutate(Species = stringr::str_to_title(Species)) %>% 
+  select(Species)
+```
+
+## Relevel  
+
+In linear regression, it is common for categorical variables to be dummy coded before being enterd in the model. To faciliate the interpretation of the regression coefficient, the reference point of the dummy variable is important. Here, let's consider the case of Species as a dummy variable. 
+
+I first remove the level `virginica` and consider only the levels `setosa` and `versicolor` of this variable. 
+```{r}
+temp_df = iris %>% filter(!Species == "virginica")
+summary(lm(Sepal.Length ~ Species, temp_df)) 
+```
+Judging from the model summary, I know that the model treats `setosa` as 0 and `versicolor` as 1. 
+
+If, however, I would like to treat `versicolor` as 0 instead. 
+```{r}
+temp_df = temp_df %>% mutate(Species = relevel(Species, ref = "versicolor"))
+summary(lm(Sepal.Length ~ Species, temp_df)) 
+```
+
+The model now treats `versicolor` as the reference point. The exact same absoule value of the regression coefficients confirms the reuslt. 

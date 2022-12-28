@@ -1,0 +1,10 @@
+"0","```r
+alpha_sig = .05
+sigma_pop = 5000
+sample_n. = 100 
+alpha_sig;sigma_pop;sample_n.
+```"
+"1","[1] 0.05
+[1] 5000
+[1] 100
+"

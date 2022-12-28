@@ -1,0 +1,2 @@
+"0","temp %>% summarize(mean_var1 = mean(var1), sd_var1 = sd(var1), "
+"0","                   mean_var2 = mean(var2), sd_var2 = sd(var2))"

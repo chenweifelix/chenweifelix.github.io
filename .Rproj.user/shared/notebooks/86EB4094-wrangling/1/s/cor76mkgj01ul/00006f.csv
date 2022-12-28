@@ -1,0 +1,5 @@
+"0","# Include values in the dataset "
+"0","temp_df = "
+"0","  tibble(Sepal.Length = 999, Sepal.Width = 999, Petal.Length = 999, Petal.Width = 999, Species = ""NONE"") %>% "
+"0","  bind_rows(iris)"
+"0","temp_df"

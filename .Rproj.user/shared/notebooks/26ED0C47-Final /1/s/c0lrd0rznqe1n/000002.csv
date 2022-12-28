@@ -1,0 +1,9 @@
+"0","```r
+df = tibble(race = c(\"Asian\",\"Black\",\"Latinx\",\"White\", \"Total\"),
+            n = c(2364, 5362, 8225, 26896, 42847), 
+            rate = c(.121, .275, .267, .100, .155)) %>% 
+  mutate(pov_n = n*rate)
+#multiply sample size by the percentage and sum it and divide by the total sample size 
+temp = df %>% filter(!(race ==\"Total\" | race == \"White\"))
+temp
+```"

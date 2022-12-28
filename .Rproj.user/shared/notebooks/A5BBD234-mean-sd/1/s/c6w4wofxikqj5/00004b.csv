@@ -1,0 +1,7 @@
+"0",""
+"0","#Alternatively, if the vars are not already created"
+"0","mtcars %>% "
+"0","  summarize(mean_var1 = mean(rowMeans(select(.,disp,hp))),"
+"0","            sd_var1 = sd(rowMeans(select(.,disp,hp))),"
+"0","            mean_var2 = mean(rowMeans(select(.,drat,wt))),"
+"0","            sd_var2 = sd(rowMeans(select(.,drat,wt))),)"

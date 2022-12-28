@@ -1,0 +1,1 @@
+"0","mtcars %>% head() %>% mutate(sd = apply(X = select(., starts_with(""c"")), FUN = sd, MARGIN = 1))"

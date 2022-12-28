@@ -1,0 +1,8 @@
+<div class="avatar text-center">
+    <img src="{{ .Site.Params.ava }}" alt="rose" class="img-ava"/>
+</div>
+<div class="px-3 text-center">
+    <h3>Hi! I'm Felix </h3>
+    <p>I'm a PhD student at Northwestern University</p>
+    <p>I study emotion and motivation</p>
+</div>

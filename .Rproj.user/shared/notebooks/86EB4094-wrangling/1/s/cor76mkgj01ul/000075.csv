@@ -1,0 +1,7 @@
+"0",""
+"0","## If the vars are numeric  "
+"0","temp_df %>% select(-Species) %>% "
+"0","  mutate(across("
+"0","        .cols = everything(),"
+"0","        ~recode( ., `999` = NaN)"
+"0","    ))"

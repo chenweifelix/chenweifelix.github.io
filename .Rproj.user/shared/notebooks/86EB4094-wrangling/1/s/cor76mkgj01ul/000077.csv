@@ -1,0 +1,6 @@
+"0","## Combine "
+"0","temp_df %>% "
+"0","  mutate(across(.cols = where(is.character), "
+"0","                .fns = ~recode( ., ""NONE"" = NA_character_))) %>% "
+"0","  mutate(across(.cols = where(is.numeric), "
+"0","                .fns = ~recode(., `999` = NaN))) "

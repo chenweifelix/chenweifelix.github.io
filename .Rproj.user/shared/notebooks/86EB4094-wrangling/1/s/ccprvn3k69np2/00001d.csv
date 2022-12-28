@@ -1,0 +1,8 @@
+"0",""
+"0","#Method 1: Manually recode each value "
+"0","iris %>% "
+"0","  mutate(Species = recode(Species, "
+"0","                          setosa = ""Setosa"", "
+"0","                          versicolor = ""Versicolor"", "
+"0","                          virginica = ""Virginica"")) %>% "
+"0","  select(Species)"

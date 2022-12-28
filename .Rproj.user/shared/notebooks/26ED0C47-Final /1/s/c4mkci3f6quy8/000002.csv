@@ -1,0 +1,13 @@
+"0","```r
+mu0 = 0 
+z_cv = qnorm(alpha_sig, 0, 1, lower.tail = TRUE) 
+z_cv
+```"
+"1","[1] -1.644854
+"
+"0","```r
+x_cv = z_cv*sigma_pop/sqrt(sample_n.) + mu0 
+x_cv
+```"
+"1","[1] -822.4268
+"

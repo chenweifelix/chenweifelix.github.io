@@ -1,0 +1,5 @@
+"0",""
+"0","# Method 2 : Use regular expression "
+"0","iris %>% "
+"0","  mutate(Species = stringr::str_to_title(Species)) %>% "
+"0","  select(Species)"

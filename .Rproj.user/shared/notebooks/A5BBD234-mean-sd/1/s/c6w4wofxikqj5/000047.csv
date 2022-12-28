@@ -1,0 +1,3 @@
+"0","temp = mtcars %>% transmute(var1 = rowMeans(select(.,disp,hp)), "
+"0","                  var2 = rowMeans(select(.,drat,wt)))"
+"0","temp %>% head()"

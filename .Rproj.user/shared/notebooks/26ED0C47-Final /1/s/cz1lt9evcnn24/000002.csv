@@ -1,0 +1,20 @@
+"0","```r
+prop.test(x = 37050 * .145, n = 37050, p = .152, correct = FALSE)
+```"
+"1","
+	1-sample proportions test without continuity correction
+
+data:  37050 * 0.145 out of 37050, null probability 0.152
+X-squared = 14.085, df = 1, p-value = 0.0001748
+alternative hypothesis: true p is not equal to 0.152
+95 percent confidence interval:
+ 0.1414515 0.1486221
+sample estimates:
+    p 
+0.145 
+"
+"0","```r
+cat(\"Because the p value of the test comparing .145 to .152 is .145, which is larger than .05, one con not draw the conclusion that native-born individuals have a poverty rate different to 15.2 percent.\")
+```"
+"1","Because the p value of the test comparing .145 to .152 is .145, which is larger than .05, one con not draw the conclusion that native-born individuals have a poverty rate different to 15.2 percent.
+"
