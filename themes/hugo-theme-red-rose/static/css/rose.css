@@ -1,6 +1,6 @@
 body {
   font-family: 'Jost', sans-serif !important; 
-  font-size: 1.2em
+  font-size: 1.4em
 }
 /*url link markdown*/
 a {
@@ -10,7 +10,7 @@ a:hover{
   color: hotpink;
 }
 h1 {
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 /*blog post font color*/
 p {
@@ -18,7 +18,7 @@ p {
 }
 /*layout size*/
 .container-sm {
-  max-width: 760px;
+  max-width: 780px;
 } 
 
 /*backround color*/
@@ -33,8 +33,8 @@ img {
 
 /*avatar/profile image*/
 .img-ava {
-  height: 200px ;
-  width: 200px;
+  height: 300px ;
+  width: 300px;
   border-radius: 50px;
   margin-bottom: 30px;
 }

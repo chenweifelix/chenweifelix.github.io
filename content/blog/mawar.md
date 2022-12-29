@@ -17,4 +17,3 @@ Roses have acquired cultural significance in many societies. Rose plants range i
 
 Different species hybridize easily, and this has been used in the development of the wide range of garden roses. 
 
-

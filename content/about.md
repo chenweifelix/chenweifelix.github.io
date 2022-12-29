@@ -1,38 +1,24 @@
 ---
-date: "2022-08-24"
 draft: false
-title: About
+css: about
 ---
-```toml
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Red Rose'
-PygmentsCodeFences = true
-PygmentsStyle = "solarized-dark256"
-pluralizelisttitles = "false"
-paginate  = 18
-disableHugoGeneratorInject = true
 
-[params]
-ava = "/img/mawar.png"
-```
-The Source Code of this Theme Available in [GitHub](https://github.com/httpsecure/hugo-theme-red-rose).
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+**I am a first-year PhD student in _Human Development and Social Policy_ at _Northwestern University_, and my research interests revolve around emotion and motivation.** 
 
-Hugo makes use of a variety of open source projects including:
+Some of the high-level questions that guide my current research are: 
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+  1. Whether and how people's motivation underlying emotion regulation (e.g., emotion desirability and controllability beliefs, emotion goals) relates to the outcomes of the short-lived emotion episodes and long-term well-being? 
+  
+  2. What is the role of emotions in long-term goal pursuits? (e.g., Do people strategically pursue want-to goals as a means to up-regulate positive emotions? How do people regulate the aversive affective feature of temptations in service of the pursuit of long-term goals?) 
+  
+  3. How is emotion regulated in interpersonal relationships? and 
+  
+  4. How is interpersonal relationship conducive or harmful to emotional well-being and goal pursuits?   
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+I use a variety of methods to address my research questions, with a particular interest in _survey methodology_. I have intensive training in creating psychometrically sound measures along with validating and refining existing ones. I am also well-trained in fitting models that are both statistically correct and grounded in psychological theories to the data. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.  
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+See [here](/blog/2022-12-11-publication/publication/) for a list of publication. 
 
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+I am part of the amazing [_Lifespan Development Lab_](https://haaselab.sesp.northwestern.edu/) directed by Dr. [_Claudia Haase_](https://sites.northwestern.edu/claudiahaase/)
 

@@ -1,13 +1,7 @@
 ---
-
-author: R package build
-date: '2022-12-10'
-slug: []
-categories:
-  - R
-
-draft: yes
+draft: false
 ---
+
 
 # I am a first-year PhD studnet in _Human Development and Social Policy_ at _Norhwestern University_, and my research interests revolve around emotion and motivation.  
 
