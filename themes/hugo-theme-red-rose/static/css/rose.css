@@ -117,3 +117,9 @@ kbd {
  
   font-size: 13px !important;
 }
+
+/*Inline text*/
+.wordcolor {
+  color: gold !important;
+  font-size: 35pt;
+}
