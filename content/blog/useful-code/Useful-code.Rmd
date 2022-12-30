@@ -12,6 +12,6 @@ Here I document the codes I often use in my work. I use *R* and *Python* similar
 - Moderation analysis (categorical and continuous, including visualization)
 - Natural language processing 
 - [Other statistical tools](../stat-tools/stat-tools-index/) 
-- [Test](../test/Final.nb.html/)
+
 
 

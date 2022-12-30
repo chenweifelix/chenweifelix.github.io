@@ -18,7 +18,7 @@ Some of the high-level questions that guide my current research are:
 
 I use a variety of methods to address my research questions, with a particular interest in _survey methodology_. I have intensive training in creating psychometrically sound measures along with validating and refining existing ones. I am also well-trained in fitting models that are both statistically correct and grounded in psychological theories to the data. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.  
 
-See [here](/blog/2022-12-11-publication/publication/) for a list of publication. 
+See [here](/blog/publication/publication/) for a list of publication. 
 
 I am part of the amazing [_Lifespan Development Lab_](https://haaselab.sesp.northwestern.edu/) directed by Dr. [_Claudia Haase_](https://sites.northwestern.edu/claudiahaase/)
 
