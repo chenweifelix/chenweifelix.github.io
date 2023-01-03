@@ -8,7 +8,7 @@ output:
   blogdown::html_page
 ---
 
-- Yu, C.-W. & J.-H. Chang (2022) Suppression of what? The distinct effects of expressive suppression of positive emotions and of negative emotions on well-being. (_Under review_)
+- Yu, C.-W. & J.-H. Chang (2023) Suppression of what valence? The distinct effects of expressive suppression of positive emotions and of negative emotions on well-being. (_Under review_)
 
 - Yu, C.-W. & J.-H. Chang (2022) Believe, express, and enjoy: Utility beliefs about social emotion expression consistently predict satisfactory outcomes. (_Under review_)
 

@@ -12,13 +12,17 @@ Some of the high-level questions that guide my current research are:
   
   2. What is the role of emotions in long-term goal pursuits? (e.g., Do people strategically pursue want-to goals as a means to up-regulate positive emotions? How do people regulate the aversive affective feature of temptations in service of the pursuit of long-term goals?) 
   
-  3. How is emotion regulated in interpersonal relationships? and 
+  3. How is emotion regulated in interpersonal relationships, and how is interpersonal relationship conducive or harmful to emotional well-being and goal pursuits?  
   
-  4. How is interpersonal relationship conducive or harmful to emotional well-being and goal pursuits?   
+  4. How social class shapes people's motivation for as well as the outcomes of emotion and self-regulation?  
 
-I use a variety of methods to address my research questions, with a particular interest in _survey methodology_. I have intensive training in creating psychometrically sound measures along with validating and refining existing ones. I am also well-trained in fitting models that are both statistically correct and grounded in psychological theories to the data. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.  
+If any of these questions sound intrgiuing to you, feel free to send me an email to chat! 
 
-See [here](/blog/publication/publication/) for a list of publication. 
+--------------
+
+I use a variety of methods to address my research questions, with an expertise in quantitative survey methodology. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.
+
+For a list of my publications, check out my [CV](https://docs.google.com/document/d/1VnBmmzXHpMbDvklKy4ehcGLGOw1QGrut/edit?usp=sharing&ouid=116007730768020152451&rtpof=true&sd=true) or see [here](/blog/publication/publication/). 
 
 I am part of the amazing [_Lifespan Development Lab_](https://haaselab.sesp.northwestern.edu/) directed by Dr. [_Claudia Haase_](https://sites.northwestern.edu/claudiahaase/)
 
