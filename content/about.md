@@ -20,7 +20,7 @@ If any of these questions sound intrgiuing to you, feel free to send me an email
 
 --------------
 
-I use a variety of methods to address my research questions, with an expertise in quantitative survey methodology. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.
+I use a variety of methods to address my research questions, with an expertise in quantitative survey methodology. My work is both exploratory and confirmatory in nature, and I value both predictability and explainability.
 
 For a list of my publications, check out my [CV](https://docs.google.com/document/d/1VnBmmzXHpMbDvklKy4ehcGLGOw1QGrut/edit?usp=sharing&ouid=116007730768020152451&rtpof=true&sd=true) or see [here](/blog/publication/publication/). 
 
