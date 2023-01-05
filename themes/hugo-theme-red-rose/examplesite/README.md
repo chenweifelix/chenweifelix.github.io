@@ -51,19 +51,6 @@ For this theme using solarized-dark256
 
 You can use favicon generator & put the favicon file inside **static** folder
 
-## Installation
-
-You can download the theme manually, extract & copy the examplesite go to themes directory
-or
-
-Refer to the [Hugo docs](https://gohugo.io/getting-started/quick-start/) for more information.
-
-## Note
-
-If you manualy install hugo, you must install hugo extended version
-
-If you using debian/ubuntu & install hugo from repo it will include **libsass1**
-
 ## License
 
 This theme released under the [MIT License](https://github.com/httpsecure/hugo-theme-red-rose/blob/main/LICENSE).
