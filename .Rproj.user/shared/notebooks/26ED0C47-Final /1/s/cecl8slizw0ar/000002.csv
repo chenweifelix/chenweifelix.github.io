@@ -1,8 +1,0 @@
-"0","```r
-#Method 2
-d = (mu_a-mu0)/sigma_pop
-result = pwr::pwr.norm.test(d = d, n = sample_n., sig.level = .05, alternative = \"less\")
-cat(\"Power of the test is:\", result$power)
-```"
-"1","Power of the test is: 0.7749194
-"

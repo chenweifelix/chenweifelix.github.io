@@ -4,7 +4,7 @@ css: about
 ---
 
 
-**I am a first-year PhD student in _Human Development and Social Policy_ at _Northwestern University_, and my research interests revolve around emotion and motivation.** 
+**I am a second-year PhD student in _Human Development and Social Policy_ at _Northwestern University_. I study emotion and motivation. I am well-trained in traditional quantitative statistical methods, and recently have been exploring advanced computational skills to answer my research questions.**
 
 Some of the high-level questions that guide my current research are: 
 
@@ -16,11 +16,11 @@ Some of the high-level questions that guide my current research are:
   
   4. How social class shapes people's motivation for as well as the outcomes of emotion and self-regulation?  
 
-If any of these questions sound intrgiuing to you, feel free to send me an email to chat! 
+If any of these questions sound intriguing to you, feel free to send me an email to chat! 
 
 --------------
 
-I use a variety of methods to address my research questions, with an expertise in quantitative survey methodology. My work is both exploratory and confirmatory in nature, and I value both predictability and explainability.
+I use a variety of methods to address my research questions, with an expertise in quantitative survey methodology and a strong interest in the analysis of behaviors *in vivo*. My work is both exploratory and confirmatory in nature, and I value both predictability and explainability.
 
 For a list of my publications, check out my [CV](https://docs.google.com/document/d/1VnBmmzXHpMbDvklKy4ehcGLGOw1QGrut/edit?usp=sharing&ouid=116007730768020152451&rtpof=true&sd=true) or see [here](/blog/publication/publication/). 
 

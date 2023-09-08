@@ -1,8 +1,0 @@
-"0","```r
-mu_a = -1200
-#Method 1
-power = pnorm(q = (x_cv-mu_a) / (sigma_pop / sqrt(sample_n.)), 0, 1, lower.tail = T) 
-cat(\"Power of the test is:\", power)
-```"
-"1","Power of the test is: 0.7749194
-"
