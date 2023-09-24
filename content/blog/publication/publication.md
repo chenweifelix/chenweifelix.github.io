@@ -10,7 +10,7 @@ output:
 
 - Yu, C.-W., & Haase C. M. (under review) Expressive suppression and mental health among young friendship dyads: A specificity approach. 
 
-- Yu, C.-W., Haase C. M., & J.-H. Chang (in press) Habitual Expressive Suppression of Positive, but not Negative, Emotions Consistently Predicts Lower Well-being across Two Culturally Distinct Regions. _Affective Science_ ([Full text](https://drive.google.com/file/d/1LAl4gMzWZjrmGjxER_Pez89iM5JtkYF7/view?usp=sharing)) 
+- Yu, C.-W. F., Haase, C. M., & Chang, J.-H. (2023). Habitual expressive suppression of positive, but not negative, emotions consistently predicts lower well-being across two culturally distinct regions. _Affective Science_ https://doi.org/10.1007/s42761-023-00221-1 ([Full text](https://drive.google.com/file/d/1LAl4gMzWZjrmGjxER_Pez89iM5JtkYF7/view?usp=sharing)) 
 
 - Yu, C.-W., & Chang, J.-H. (2023). Believe, express, and enjoy: Utility beliefs about social emotion expression consistently predict satisfactory outcomes. _Motivation and Emotion_. https://doi.org/10.1007/s11031-023-10009-2 ([Full text](https://drive.google.com/file/d/12qGIoMN_grzRc_cjdWxfYF-qmzneUqLI/view?usp=sharing)) 
 
