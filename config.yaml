@@ -1,5 +1,5 @@
 theme: hugo-theme-red-rose
-baseURL: http://example.org/
+baseURL: "https://chenweifelix.github.io/my-website-ongit/"
 languageCode: en
 title: Felix (Chen-Wei) Yu
 PygmentsCodeFences: yes
