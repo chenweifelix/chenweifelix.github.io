@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Data Wrangling—Python"
 output: 
   html_notebook:
@@ -9,106 +9,7 @@ output:
     theme: readable
 author: Felix Yu 
 date: 2022-12-12 
----
+--- -->
 
-# Basic setting
-
-
-```python
-#loading in packages 
-import pandas as pd 
-import numpy as np
-from sklearn import datasets
-#take a look at data 
-iris = datasets.load_iris(return_X_y = True, as_frame = True)
-iris = pd.concat([iris[0], iris[1]], axis = 1)
-iris 
-```
-
-```
-##      sepal length (cm)  sepal width (cm)  ...  petal width (cm)  target
-## 0                  5.1               3.5  ...               0.2       0
-## 1                  4.9               3.0  ...               0.2       0
-## 2                  4.7               3.2  ...               0.2       0
-## 3                  4.6               3.1  ...               0.2       0
-## 4                  5.0               3.6  ...               0.2       0
-## ..                 ...               ...  ...               ...     ...
-## 145                6.7               3.0  ...               2.3       2
-## 146                6.3               2.5  ...               1.9       2
-## 147                6.5               3.0  ...               2.0       2
-## 148                6.2               3.4  ...               2.3       2
-## 149                5.9               3.0  ...               1.8       2
-## 
-## [150 rows x 5 columns]
-```
-
-```python
-iris.info()
-```
-
-```
-## <class 'pandas.core.frame.DataFrame'>
-## RangeIndex: 150 entries, 0 to 149
-## Data columns (total 5 columns):
-##  #   Column             Non-Null Count  Dtype  
-## ---  ------             --------------  -----  
-##  0   sepal length (cm)  150 non-null    float64
-##  1   sepal width (cm)   150 non-null    float64
-##  2   petal length (cm)  150 non-null    float64
-##  3   petal width (cm)   150 non-null    float64
-##  4   target             150 non-null    int64  
-## dtypes: float64(4), int64(1)
-## memory usage: 6.0 KB
-```
-
-# Recode data values 
-
-## Value 
-If in the dataset, a specific value means missing data (e.g., 999), we need to recode it as such before putting the varables in the model
-
-```python
-# Include values in the dataset 
-temp_df = pd.concat([
-  pd.DataFrame({
-    "sepal length (cm)" : [999], 
-    "sepal width (cm)" : [999], 
-    "petal length (cm)" : [999],
-    "petal width (cm)" : [999],
-    "target" : ["NONE"]}), 
-  iris
-  ]
-  )
-
-#Recode
-temp_df.replace({
-  999 : None,
-  "NONE" : None
-})
-```
-
-```
-##     sepal length (cm) sepal width (cm)  ... petal width (cm) target
-## 0                None             None  ...             None   None
-## 0                 5.1              3.5  ...              0.2      0
-## 1                 4.9              3.0  ...              0.2      0
-## 2                 4.7              3.2  ...              0.2      0
-## 3                 4.6              3.1  ...              0.2      0
-## ..                ...              ...  ...              ...    ...
-## 145               6.7              3.0  ...              2.3      2
-## 146               6.3              2.5  ...              1.9      2
-## 147               6.5              3.0  ...              2.0      2
-## 148               6.2              3.4  ...              2.3      2
-## 149               5.9              3.0  ...              1.8      2
-## 
-## [151 rows x 5 columns]
-```
-
-## Text 
-Let's suppose we want `Species` to be coded with the first letter being captital. 
-
-
-
-
-
-
+<!-- # Basic setting
 
