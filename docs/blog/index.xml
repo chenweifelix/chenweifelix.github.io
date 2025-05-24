@@ -2,108 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Felix (Chen-Wei) Yu</title>
-    <link>http://localhost:4321/blog/</link>
+    <link>http://example.org/blog/</link>
     <description>Recent content in Blog on Felix (Chen-Wei) Yu</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 12 Dec 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:4321/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Wrangling—R</title>
-      <link>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/wrangling/wrangling/</link>
+      <link>http://example.org/blog/useful-code/data-wrangling-and-visualization/wrangling/wrangling/</link>
       <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/wrangling/wrangling/</guid>
+      <guid>http://example.org/blog/useful-code/data-wrangling-and-visualization/wrangling/wrangling/</guid>
       <description>&lt;h1 id=&#34;basic-setting&#34;&gt;Basic setting&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;#loading in packages &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;library&lt;/span&gt;(tidyverse)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──&#xA;## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 &#xA;## ✔ tibble  3.1.8      ✔ dplyr   1.0.10&#xA;## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 &#xA;## ✔ readr   2.1.3      ✔ forcats 0.5.2 &#xA;## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──&#xA;## ✖ dplyr::filter() masks stats::filter()&#xA;## ✖ dplyr::lag()    masks stats::lag()&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;#take a look at data &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;head&lt;/span&gt;(iris) &lt;span style=&#34;color:#4e4e4e&#34;&gt;#built-in data in R &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species&#xA;## 1          5.1         3.5          1.4         0.2  setosa&#xA;## 2          4.9         3.0          1.4         0.2  setosa&#xA;## 3          4.7         3.2          1.3         0.2  setosa&#xA;## 4          4.6         3.1          1.5         0.2  setosa&#xA;## 5          5.0         3.6          1.4         0.2  setosa&#xA;## 6          5.4         3.9          1.7         0.4  setosa&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;str&lt;/span&gt;(iris)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:&#x9;150 obs. of  5 variables:&#xA;##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...&#xA;##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...&#xA;##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...&#xA;##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...&#xA;##  $ Species     : Factor w/ 3 levels &amp;#34;setosa&amp;#34;,&amp;#34;versicolor&amp;#34;,..: 1 1 1 1 1 1 1 1 1 1 ...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;recode-data-values&#34;&gt;Recode data values&lt;/h1&gt;&#xA;&lt;h2 id=&#34;value&#34;&gt;Value&lt;/h2&gt;&#xA;&lt;p&gt;If in the dataset, a specific value means missing data (e.g., 999), we need to recode it as such before putting the varables in the model&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:4321/blog/useful-code/useful-code/</link>
+      <link>http://example.org/blog/useful-code/useful-code/</link>
       <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/useful-code/</guid>
+      <guid>http://example.org/blog/useful-code/useful-code/</guid>
       <description>&lt;p&gt;Here I document the codes I often use in my work. I use &lt;em&gt;R&lt;/em&gt; and &lt;em&gt;Python&lt;/em&gt; similarly frequently.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../data-wrangling-and-visualization/wrang-vis-index/&#34;&gt;Data wrangling, descriptive analysis, and visualization&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Moderation analysis (categorical and continuous, including visualization)&lt;/li&gt;&#xA;&lt;li&gt;Natural language processing&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../stat-tools/stat-tools-index/&#34;&gt;Other statistical tools&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Data wrangling and visualization</title>
-      <link>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/wrang-vis-index/</link>
+      <link>http://example.org/blog/useful-code/data-wrangling-and-visualization/wrang-vis-index/</link>
       <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/wrang-vis-index/</guid>
+      <guid>http://example.org/blog/useful-code/data-wrangling-and-visualization/wrang-vis-index/</guid>
       <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;r&#34;&gt;&lt;em&gt;R&lt;/em&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../wrangling/wrangling.nb.html/&#34;&gt;Recode data&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../mean-sd/mean-sd/&#34;&gt;Calculate means and standard deviations; Standardize variables&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Bar plot/ Histogram&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Scatter plot&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../shiny-apps/apps_index&#34;&gt;Shiny apps&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;python&#34;&gt;&lt;em&gt;Python&lt;/em&gt;&lt;/h1&gt;&#xA;&lt;!-- - [Recode data](../wrangling/wrangling-python.nb.html/) --&gt;</description>
     </item>
     <item>
-      <title></title>
-      <link>http://localhost:4321/blog/research-interests/research-interests/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/research-interests/research-interests/</guid>
-      <description>&lt;h1 id=&#34;i-am-a-first-year-phd-studnet-in-human-development-and-social-policy-at-norhwestern-university-and-my-research-interests-revolve-around-emotion-and-motivation&#34;&gt;I am a first-year PhD studnet in &lt;em&gt;Human Development and Social Policy&lt;/em&gt; at &lt;em&gt;Norhwestern University&lt;/em&gt;, and my research interests revolve around emotion and motivation.&lt;/h1&gt;&#xA;&lt;p&gt;Some of the high-level questions that guide my current research are:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Whether and how people&amp;rsquo;s motivation underlying emotion regulation (e.g., emotion desirability and controllability beliefs, emotion goals) relates to the outcomes of the short-lived emotion episodes and long-term well-being?&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;What is the role of emotions in long-term goal pursuits? (e.g., Do people strategically pursue want-to goals as a means to up-regulate positive emotions? How do people regulate the aversive affective feature of temptations in service of the pursuit of long-term goals?)&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Felix</title>
-      <link>http://localhost:4321/blog/mawar/</link>
+      <link>http://example.org/blog/mawar/</link>
       <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/mawar/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:4321/img/mawar.png&#34; alt=&#34;mawar&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rose is either a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears.&lt;/p&gt;&#xA;&lt;p&gt;There are over three hundred species and tens of thousands of cultivars.They form a group of plants that can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles.&lt;/p&gt;&#xA;&lt;p&gt;Their flowers vary in size and shape and are usually large and showy, in colours ranging from white through yellows and reds. Most species are native to Asia, with smaller numbers native to Europe, North America, and northwestern Africa.Species, cultivars and hybrids are all widely grown for their beauty and often are fragrant.&lt;/p&gt;</description>
+      <guid>http://example.org/blog/mawar/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://example.org/img/mawar.png&#34; alt=&#34;mawar&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rose is either a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears.&lt;/p&gt;&#xA;&lt;p&gt;There are over three hundred species and tens of thousands of cultivars.They form a group of plants that can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles.&lt;/p&gt;&#xA;&lt;p&gt;Their flowers vary in size and shape and are usually large and showy, in colours ranging from white through yellows and reds. Most species are native to Asia, with smaller numbers native to Europe, North America, and northwestern Africa.Species, cultivars and hybrids are all widely grown for their beauty and often are fragrant.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Felix post</title>
-      <link>http://localhost:4321/blog/rose/</link>
+      <link>http://example.org/blog/rose/</link>
       <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/rose/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:4321/img/mawar.png&#34; alt=&#34;mawar&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rose is either a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears.&lt;/p&gt;&#xA;&lt;p&gt;There are over three hundred species and tens of thousands of cultivars.They form a group of plants that can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles.&lt;/p&gt;&#xA;&lt;p&gt;Their flowers vary in size and shape and are usually large and showy, in colours ranging from white through yellows and reds. Most species are native to Asia, with smaller numbers native to Europe, North America, and northwestern Africa.Species, cultivars and hybrids are all widely grown for their beauty and often are fragrant.&lt;/p&gt;</description>
+      <guid>http://example.org/blog/rose/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://example.org/img/mawar.png&#34; alt=&#34;mawar&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rose is either a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears.&lt;/p&gt;&#xA;&lt;p&gt;There are over three hundred species and tens of thousands of cultivars.They form a group of plants that can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles.&lt;/p&gt;&#xA;&lt;p&gt;Their flowers vary in size and shape and are usually large and showy, in colours ranging from white through yellows and reds. Most species are native to Asia, with smaller numbers native to Europe, North America, and northwestern Africa.Species, cultivars and hybrids are all widely grown for their beauty and often are fragrant.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello R Markdown</title>
-      <link>http://localhost:4321/blog/2020-12-01-r-rmarkdown/</link>
+      <link>http://example.org/blog/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      <guid>http://localhost:4321/blog/2020-12-01-r-rmarkdown/</guid>
+      <guid>http://example.org/blog/2020-12-01-r-rmarkdown/</guid>
       <description>&lt;h1 id=&#34;r-markdown&#34;&gt;R Markdown&lt;/h1&gt;&#xA;&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;summary&lt;/span&gt;(cars)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##      speed           dist       &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  Min.   : 4.0   Min.   :  2.00  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  1st Qu.:12.0   1st Qu.: 26.00  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  Median :15.0   Median : 36.00  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  Mean   :15.4   Mean   : 42.98  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  3rd Qu.:19.0   3rd Qu.: 56.00  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##  Max.   :25.0   Max.   :120.00&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fit &amp;lt;- &lt;span style=&#34;color:#0087ff&#34;&gt;lm&lt;/span&gt;(dist ~ speed, data = cars)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fit&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## Call:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## lm(formula = dist ~ speed, data = cars)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## Coefficients:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;## (Intercept)        speed  &lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e4e4e&#34;&gt;##     -17.579        3.932&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;including-plots&#34;&gt;Including Plots&lt;/h1&gt;&#xA;&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:4321/blog/thoughts/thoughts-index/</link>
+      <link>http://example.org/blog/thoughts/thoughts-index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/thoughts/thoughts-index/</guid>
+      <guid>http://example.org/blog/thoughts/thoughts-index/</guid>
       <description>&lt;p&gt;Here I document the questions I&amp;rsquo;ve been grappling with.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Conference</title>
-      <link>http://localhost:4321/blog/publication/conference/conference-index/</link>
+      <link>http://example.org/blog/publication/conference/conference-index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/publication/conference/conference-index/</guid>
+      <guid>http://example.org/blog/publication/conference/conference-index/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;2023 SAS: &lt;a href=&#34;../2023%20SAS/2023-SAS-Poster.pdf&#34;&gt;Poster&lt;/a&gt; (&lt;a href=&#34;../2023%20SAS/2023-SAS-tables.pdf&#34;&gt;Supplemental materials&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;2023 SPSP: &lt;a href=&#34;../2023%20SPSP/2023%20SPSP%20Poster_v2.pdf&#34;&gt;Poster&lt;/a&gt; (&lt;a href=&#34;../2023%20SPSP/Poster%20Supplementals.pdf&#34;&gt;Supplemental materials&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Mean, SD, Standardization</title>
-      <link>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/mean-sd/mean-sd/</link>
+      <link>http://example.org/blog/useful-code/data-wrangling-and-visualization/mean-sd/mean-sd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/mean-sd/mean-sd/</guid>
+      <guid>http://example.org/blog/useful-code/data-wrangling-and-visualization/mean-sd/mean-sd/</guid>
       <description>&lt;h1 id=&#34;load-in-packages&#34;&gt;Load in packages&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;library&lt;/span&gt;(tidyverse)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──&#xA;## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 &#xA;## ✔ tibble  3.1.8      ✔ dplyr   1.0.10&#xA;## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 &#xA;## ✔ readr   2.1.3      ✔ forcats 0.5.2 &#xA;## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──&#xA;## ✖ dplyr::filter() masks stats::filter()&#xA;## ✖ dplyr::lag()    masks stats::lag()&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;take-a-look-at-the-data&#34;&gt;Take a look at the data&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0087ff&#34;&gt;str&lt;/span&gt;(mtcars)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:&#x9;32 obs. of  11 variables:&#xA;##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...&#xA;##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...&#xA;##  $ disp: num  160 160 108 258 360 ...&#xA;##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...&#xA;##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...&#xA;##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...&#xA;##  $ qsec: num  16.5 17 18.6 19.4 17 ...&#xA;##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...&#xA;##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...&#xA;##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...&#xA;##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;calculating-the-mean-of-multiple-columns&#34;&gt;Calculating the mean of multiple columns&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mtcars %&amp;gt;% &lt;span style=&#34;color:#0087ff&#34;&gt;head&lt;/span&gt;() %&amp;gt;% &lt;span style=&#34;color:#0087ff&#34;&gt;mutate&lt;/span&gt;(mean = &lt;span style=&#34;color:#0087ff&#34;&gt;rowMeans&lt;/span&gt;(&lt;span style=&#34;color:#0087ff&#34;&gt;select&lt;/span&gt;(.,vs,am))) &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb mean&#xA;## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4  0.5&#xA;## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4  0.5&#xA;## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1  1.0&#xA;## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1  0.5&#xA;## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2  0.0&#xA;## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1  0.5&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Calculate the mean of the columns with &amp;ldquo;m.&amp;rdquo; Useful when calculating the means of the questionnaire items that are named with the name of the questionnaire&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publications</title>
-      <link>http://localhost:4321/blog/publication/publication/</link>
+      <link>http://example.org/blog/publication/publication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/publication/publication/</guid>
+      <guid>http://example.org/blog/publication/publication/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Yu, C.-W., &amp;amp; Haase C. M. (under review) Expressive suppression and mental health among young friendship dyads: A specificity approach.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Yu, C.-W. F., Haase, C. M., &amp;amp; Chang, J.-H. (2023). Habitual expressive suppression of positive, but not negative, emotions consistently predicts lower well-being across two culturally distinct regions. &lt;em&gt;Affective Science&lt;/em&gt; &lt;a href=&#34;https://doi.org/10.1007/s42761-023-00221-1&#34;&gt;https://doi.org/10.1007/s42761-023-00221-1&lt;/a&gt; (&lt;a href=&#34;https://drive.google.com/file/d/1LAl4gMzWZjrmGjxER_Pez89iM5JtkYF7/view?usp=sharing&#34;&gt;Full text&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Yu, C.-W., &amp;amp; Chang, J.-H. (2023). Believe, express, and enjoy: Utility beliefs about social emotion expression consistently predict satisfactory outcomes. &lt;em&gt;Motivation and Emotion&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.1007/s11031-023-10009-2&#34;&gt;https://doi.org/10.1007/s11031-023-10009-2&lt;/a&gt; (&lt;a href=&#34;https://drive.google.com/file/d/12qGIoMN_grzRc_cjdWxfYF-qmzneUqLI/view?usp=sharing&#34;&gt;Full text&lt;/a&gt;)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Shiny Apps</title>
-      <link>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/shiny-apps/apps_index/</link>
+      <link>http://example.org/blog/useful-code/data-wrangling-and-visualization/shiny-apps/apps_index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/shiny-apps/apps_index/</guid>
+      <guid>http://example.org/blog/useful-code/data-wrangling-and-visualization/shiny-apps/apps_index/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://chenweifelix.shinyapps.io/Test-mean-compare/&#34;&gt;Mean comparison (plot and test)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Shiny-apps</title>
-      <link>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/vis_apps/shiny-apps/apps_index/</link>
+      <link>http://example.org/blog/useful-code/data-wrangling-and-visualization/vis_apps/shiny-apps/apps_index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/data-wrangling-and-visualization/vis_apps/shiny-apps/apps_index/</guid>
+      <guid>http://example.org/blog/useful-code/data-wrangling-and-visualization/vis_apps/shiny-apps/apps_index/</guid>
       <description>&lt;p&gt;shiny-apps&lt;/p&gt;</description>
     </item>
     <item>
       <title>Statistical tools</title>
-      <link>http://localhost:4321/blog/useful-code/stat-tools/stat-tools-index/</link>
+      <link>http://example.org/blog/useful-code/stat-tools/stat-tools-index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4321/blog/useful-code/stat-tools/stat-tools-index/</guid>
+      <guid>http://example.org/blog/useful-code/stat-tools/stat-tools-index/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://comparingcronbachalphas.org/&#34;&gt;Comparing two reliability coefficient alphas&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://comparingcorrelations.org/&#34;&gt;Comparing two correlation coefficients&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
