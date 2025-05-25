@@ -1,0 +1,30 @@
+---
+author: Felix
+slug: []
+categories: []
+tags: []
+output:
+  blogdown::html_page
+---
+
+### In press / Under review / In preparation
+
+- Yu, C.-W., Hu, H.-Y, Chang, J.-H., Haase, C. M., Brady, W. J., Furnas, A. C. & Wang D. (under review) From Psychology to Policy: Citations to Psychology Research in US Policy Documents. 
+
+- Yu, C.-W., Chang, J.-H., & Haase C. M. (paper in preparation) Emotion Regulation Predicts Stable and Long-term Future Well-being. 
+
+- Yu, C.-W., Brady, W. J., (paper in preparation) Motives for online outrage expression in political discussions: Production, inferences, and social political consequences
+
+### Journal articles
+
+- Yu, C.-W., Chuang, Y.-S., Lotsos, A. N., Meier, T., & Haase, C. M. (2025). The more similar, the better? Associations between latent semantic similarity and emotional experiences differ across conversation contexts. _Journal of Language and Social Psychology_, 0261927X251343096. https://doi.org/10.1177/0261927X251343096
+
+- Yu, C.-W. F., Haase, C. M., & Chang, J.-H. (2023). Habitual expressive suppression of positive, but not negative, emotions consistently predicts lower well-being across two culturally distinct regions. _Affective Science_ https://doi.org/10.1007/s42761-023-00221-1 ([Full text](https://drive.google.com/file/d/1LAl4gMzWZjrmGjxER_Pez89iM5JtkYF7/view?usp=sharing)) 
+
+- Yu, C.-W., & Chang, J.-H. (2023). Believe, express, and enjoy: Utility beliefs about social emotion expression consistently predict satisfactory outcomes. _Motivation and Emotion_. https://doi.org/10.1007/s11031-023-10009-2 ([Full text](https://drive.google.com/file/d/12qGIoMN_grzRc_cjdWxfYF-qmzneUqLI/view?usp=sharing)) 
+
+- Yu, C.-W., Chang, Y.-P., Li, C.-H., & Wu, H.-Y. (2022). From Emotion Beliefs to Regulatory Behavior: Gratitude Journaling Initiation and Outcomes. _Journal of Happiness Studies_. https://doi.org/10.1007/s10902-022-00584-5
+
+### Conference Presentations 
+
+For a list of conference presentations, please see my [CV](https://docs.google.com/document/d/1VnBmmzXHpMbDvklKy4ehcGLGOw1QGrut/edit#heading=h.gjdgxs).

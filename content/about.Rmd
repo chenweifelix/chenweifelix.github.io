@@ -2,22 +2,15 @@
 draft: false
 ---
 
+# I am a PhD candidate at _Norhwestern University_. My research is motivated by two broad questions: (1) why and how people regulate their own and others' emotions, and (2) what are the consequences of emotion regulation at the individual, interpersonal, and societal levels.
 
-# I am a first-year PhD studnet in _Human Development and Social Policy_ at _Norhwestern University_, and my research interests revolve around emotion and motivation.  
 
-Some of the high-level questions that guide my current research are: 
-
-  1. Whether and how people's motivation underlying emotion regulation (e.g., emotion desirability and controllability beliefs, emotion goals) relates to the outcomes of the short-lived emotion episodes and long-term well-being? 
+  1. Why and how people regulate their own and others' emotions? For instance, why are some emotions expressed more than others? What goals drive people's emotion expression vs. suppression?  
   
-  2. What is the role of emotions in long-term goal pursuits? (e.g., Do people strategically pursue want-to goals as a means to up-regulate positive emotions? How do people regulate the aversive affective feature of temptations in service of the pursuit of long-term goals?) 
-  
-  3. How is emotion regulated in interpersonal relationships? and 
-  
-  4. How is interpersonal relationship conducive or harmful to emotional well-being and goal pursuits?   
+  2. What are the consequences of motivated emotion regulation, at the individual, interpersonal, and societal levels? For instance, how does emotion regulation affect people's short- and long-term well-being? How does it affect people's relationships with others at different stages, from initiation, maintenance, and even dissolution? More recently, I've been exploring the processes in which individuals' emotion regulation scales up to affect social changes, such as the rise of social movements. 
 
-I use a variety of methods to address my research questions, with a particular interest in _survey methodology_. I have intensive training in creating psychometrically sound measures along with validating and refining existing ones. I am also well-trained in fitting models that are both statistically correct and grounded in psychological theories to the data. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.  
+I use a variety of methods to address my research questions, spanning across traditional quantitative tools (e.g., survey experiment, daily dairy, structural equational modeling, etc.) to computational approaches (e.g., text analysis, network analysis, etc.). I value both data-driven insights and theory-guided explanations. 
+
+I have intensive quantitative and computational training in creating psychometrically sound measures along with validating and refining existing ones. I am also well-trained in fitting models that are both statistically correct and grounded in psychological theories to the data. My work is both exploratory and confirmatory in nature, and I value both predictability and explanbility.  
 
 See [here](/blog/2022-12-11-publication/publication/) for a list of publication. 
-
-I am part of the amazing [_Lifespan Development Lab_](https://haaselab.sesp.northwestern.edu/) directed by Dr. [_Claudia Haase_](https://sites.northwestern.edu/claudiahaase/)
-

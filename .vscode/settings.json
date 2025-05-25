@@ -1,0 +1,22 @@
+{
+    "cSpell.enabledFileTypes": {
+        "rmd": true,
+        "Rmd": true,
+        "rmarkdown": true
+    },
+    "cSpell.enabled": true, 
+"files.associations": {
+  "*.Rmd": "markdown",
+  "*.r": "r"
+},
+"spellright.language": [
+  "en"
+],
+"spellright.documentTypes": [
+  "markdown",
+  "latex",
+  "plaintext",
+  "rmd",
+  "html"
+]
+}
