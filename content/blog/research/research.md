@@ -3,17 +3,15 @@ author: Felix
 slug: []
 categories: []
 tags: []
-output:
-  blogdown::html_page
 ---
 
 ### In press / Under review / In preparation
 
+- Yu, C.-W., Brady, W. J., (under review) Motives for online outrage expression in political discussions: Production, inferences, and social political consequences [OSF preprint](https://osf.io/preprints/psyarxiv/nfgwc_v1)
+
 - Yu, C.-W., Hu, H.-Y, Chang, J.-H., Haase, C. M., Brady, W. J., Furnas, A. C. & Wang D. (under review) From Psychology to Policy: Citations to Psychology Research in US Policy Documents. 
 
-- Yu, C.-W., Chang, J.-H., & Haase C. M. (paper in preparation) Emotion Regulation Predicts Stable and Long-term Future Well-being. 
-
-- Yu, C.-W., Brady, W. J., (paper in preparation) Motives for online outrage expression in political discussions: Production, inferences, and social political consequences
+- Yu, C.-W., Chang, J.-H., & Haase C. M. (under review) Emotion Regulation Predicts Stable and Long-term Future Well-being. [OSF preprint](https://osf.io/preprints/osf/xprme_v2)
 
 ### Journal articles
 
