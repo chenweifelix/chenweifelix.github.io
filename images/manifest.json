@@ -1,0 +1,21 @@
+---
+layout: none
+permalink: /images/manifest.json
+---
+{
+  "name": {{ site.title | jsonify }},
+  "short_name": "Felix Yu",
+  "description": {{ site.description | jsonify }},
+  "start_url": "/",
+  "lang": {{ site.locale | jsonify }},
+  "theme_color": "#171417",
+  "background_color": "#171417",
+  "icons": [
+    {
+      "src": "/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

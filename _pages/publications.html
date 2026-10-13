@@ -1,0 +1,25 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+description: "Manuscripts and journal articles by Felix (Chen-Wei) Yu."
+author_profile: true
+redirect_from:
+  - /blog/publication/publication/
+---
+
+<p class="page-intro">My work examines emotion and motivation across individual, interpersonal, and societal contexts. Manuscripts are grouped by publication status; links lead to preprints, full text, or the publisher record when available.</p>
+
+{% for category in site.publication_category %}
+  {% assign category_publications = site.publications | where: "category", category[0] | sort: "order" %}
+  {% if category_publications.size > 0 %}
+    <section class="publication-group" aria-labelledby="{{ category[0] }}-heading">
+      <h2 id="{{ category[0] }}-heading">{{ category[1].title }}</h2>
+      <div class="publication-list">
+        {% for publication in category_publications %}
+          {% include publication-card.html publication=publication %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

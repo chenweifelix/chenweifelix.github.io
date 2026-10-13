@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="research-main" role="main">
+  <aside class="research-toc" aria-label="Research sections">
+    <p class="research-toc__title">On this page</p>
+    <nav>
+      <ol>
+        {% for item in page.research_nav %}
+          <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </aside>
+
+  <article class="research-page" itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <header class="research-page__header">
+      <p class="eyebrow">Research program</p>
+      <h1 itemprop="headline">{{ page.title }}</h1>
+      <p>Connecting the everyday management of emotion to the relationships, institutions, and public conversations that organize social life.</p>
+    </header>
+    <div class="research-page__content" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </article>
+</div>

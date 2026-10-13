@@ -1,0 +1,17 @@
+{% assign publication = include.publication %}
+<article class="publication-card{% if include.compact %} publication-card--compact{% endif %}">
+  <p class="publication-card__meta">
+    <span class="status-label">{{ publication.status }}</span>
+    {% if publication.year %}<span>{{ publication.year }}</span>{% endif %}
+  </p>
+  <h3 class="publication-card__title">
+    <a href="{{ publication.url | relative_url }}">{{ publication.title }}</a>
+  </h3>
+  <p class="publication-card__authors">{{ publication.authors }}</p>
+  {% if publication.venue %}<p class="publication-card__venue">{{ publication.venue }}</p>{% endif %}
+  <div class="publication-card__links">
+    <a href="{{ publication.url | relative_url }}">Details</a>
+    {% if publication.paperurl %}<a href="{{ publication.paperurl }}">Preprint or full text <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if publication.doi %}<a href="{{ publication.doi }}">DOI <span aria-hidden="true">↗</span></a>{% endif %}
+  </div>
+</article>

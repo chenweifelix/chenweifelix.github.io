@@ -1,0 +1,142 @@
+# Site identity
+locale: "en-US"
+site_theme: "default"
+title: "Felix (Chen-Wei) Yu"
+title_separator: "·"
+name: &name "Felix (Chen-Wei) Yu"
+description: &description "Personal website of Felix (Chen-Wei) Yu, a PhD candidate studying emotion regulation and its individual, interpersonal, and societal consequences."
+url: "https://chenweifelix.github.io"
+baseurl: ""
+repository: "chenweifelix/chenweifelix.github.io"
+timezone: "America/Chicago"
+
+# Profile shown on Home and Publications
+author:
+  avatar: "profile-placeholder.svg"
+  avatar_alt: "Placeholder portrait for Felix (Chen-Wei) Yu"
+  name: "Felix (Chen-Wei) Yu"
+  bio: "PhD candidate at Northwestern University"
+  employer: "Northwestern University"
+  email: "felix.chenwei@u.northwestern.edu"
+  github: "chenweifelix"
+  medium: "https://medium.com/@chenweifelix"
+  cv: "/files/Felix_Yu_CV.pdf"
+
+publication_category:
+  under_review:
+    title: "Manuscripts under review"
+  journal_articles:
+    title: "Journal articles"
+
+# Site behavior
+breadcrumbs: false
+words_per_minute: 180
+future: false
+read_more: "disabled"
+comments:
+  provider:
+atom_feed:
+  hide: true
+  path: "/feed.xml"
+
+# Search/social metadata
+og_image: "profile-placeholder.svg"
+og_image_alt: "Felix (Chen-Wei) Yu — emotion and human development researcher"
+og_description: *description
+social:
+  type: "Person"
+  name: *name
+  links:
+    - "https://github.com/chenweifelix"
+    - "https://medium.com/@chenweifelix"
+analytics:
+  provider: false
+
+# Files Jekyll should process or preserve
+include:
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - AGENTS.md
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/theme.js
+  - CHANGELOG
+  - Dockerfile
+  - docker-compose.yaml
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - vendor
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Markdown and collections
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..3
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+      author_profile: false
+      share: false
+      sitemap: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: /:categories/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

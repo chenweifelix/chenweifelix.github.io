@@ -1,0 +1,52 @@
+{% include base_path %}
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button class="greedy-nav__toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span class="navicon"></span></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg persist">
+            <a href="{{ base_path }}/" aria-label="{{ site.title }} home">
+              <span class="site-title__full">{{ site.title }}</span>
+              <span class="site-title__short" aria-hidden="true">Felix Yu</span>
+            </a>
+          </li>
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            {% assign link_selected = false %}
+            {% if link.url == '/' and page.url == '/' %}
+              {% assign link_selected = true %}
+            {% elsif link.url != '/' and page.url contains link.url %}
+              {% assign link_selected = true %}
+            {% endif %}
+            <li class="masthead__menu-item {% if link_selected %}selected{% endif %}">
+              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation menu"><span class="navicon" aria-hidden="true"></span></summary>
+        <ul>
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            <li><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="true">
+        <span id="theme-icon" aria-hidden="true">◐</span>
+        <span class="sr-only">Toggle color theme</span>
+      </button>
+    </div>
+  </div>
+</div>
