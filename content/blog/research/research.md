@@ -1,11 +1,13 @@
 ---
+title: Research
 author: Felix
 slug: []
 categories: []
 tags: []
+toc: true
 ---
 
-### In press / Under review / In preparation
+## In press / Under review / In preparation
 
 - Yu, C.-W., Brady, W. J., (under review) Motives for online outrage expression in political discussions: Production, inferences, and social political consequences [OSF preprint](https://osf.io/preprints/psyarxiv/nfgwc_v1)
 
@@ -13,7 +15,7 @@ tags: []
 
 - Yu, C.-W., Chang, J.-H., & Haase C. M. (under review) Emotion Regulation Predicts Stable and Long-term Future Well-being. [OSF preprint](https://osf.io/preprints/osf/xprme_v2)
 
-### Journal articles
+## Journal articles
 
 - Yu, C.-W., Chuang, Y.-S., Lotsos, A. N., Meier, T., & Haase, C. M. (2025). The more similar, the better? Associations between latent semantic similarity and emotional experiences differ across conversation contexts. _Journal of Language and Social Psychology_, 0261927X251343096. https://doi.org/10.1177/0261927X251343096
 
@@ -23,6 +25,6 @@ tags: []
 
 - Yu, C.-W., Chang, Y.-P., Li, C.-H., & Wu, H.-Y. (2022). From Emotion Beliefs to Regulatory Behavior: Gratitude Journaling Initiation and Outcomes. _Journal of Happiness Studies_. https://doi.org/10.1007/s10902-022-00584-5
 
-### Conference Presentations 
+## Conference presentations
 
 For a list of conference presentations, please see my [CV](https://docs.google.com/document/d/1VnBmmzXHpMbDvklKy4ehcGLGOw1QGrut/edit#heading=h.gjdgxs).

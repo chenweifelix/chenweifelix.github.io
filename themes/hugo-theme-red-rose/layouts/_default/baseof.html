@@ -3,7 +3,7 @@
 
 {{- partial "head.html" . }}
 
-<body class="d-flex md h-100 container-sm text-white bg-dark"> 
+<body class="d-flex md h-100 container-sm text-white bg-dark{{ if .Params.toc }} page-has-toc{{ end }}">
 <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
 
   {{- partial "header.html" . }}

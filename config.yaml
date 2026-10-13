@@ -1,5 +1,5 @@
 theme: hugo-theme-red-rose
-baseURL: http://example.org/
+baseURL: https://chenweifelix.github.io/
 languageCode: en
 title: Felix (Chen-Wei) Yu
 PygmentsCodeFences: yes
@@ -9,6 +9,7 @@ pagination.pagerSize: 2
 disableHugoGeneratorInject: yes
 params:
   ava: /img/profile.JPG
+  description: Personal website of Felix (Chen-Wei) Yu, a researcher studying emotion regulation and its individual, interpersonal, and societal consequences.
 module:
   hugoVersion:
     extended: yes
