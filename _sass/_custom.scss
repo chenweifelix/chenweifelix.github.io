@@ -432,10 +432,8 @@ html[data-theme="dark"] .btn--primary:hover {
 }
 
 .research-section__number {
-  position: absolute;
-  top: 3.35rem;
-  right: 0;
-  margin: 0;
+  position: static;
+  margin: 0 0 1rem;
 }
 
 .method-list {
@@ -786,10 +784,6 @@ html[data-theme="dark"] .btn--primary:hover {
     text-align: center;
   }
 
-  .research-section__number {
-    position: static;
-    margin-bottom: 1rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
