@@ -29,7 +29,9 @@ research_nav:
   an eye toward understanding the consequences for well-being, relationships,
   and society. I'm particularly interested in how these social emotional processes
   shape and are reshaped by emerging AI systems as they
-  become more integrated into our social lives.</p>
+  become more integrated into our social lives.
+  Below are three broad streams of research that I am currently pursuing, along with a brief overview of my approach and methods.
+  </p>
 </section>
 
 <section id="research-1" class="research-section" aria-labelledby="research-1-heading">
