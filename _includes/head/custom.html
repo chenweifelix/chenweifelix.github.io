@@ -1,0 +1,35 @@
+{% include base_path %}
+
+<!-- Font Awesome icons used by the compact profile and theme controls -->
+<link rel="preload" href="{{ base_path }}/assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ base_path }}/assets/css/fontawesome.css"></noscript>
+
+<link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg">
+<link rel="manifest" href="{{ base_path }}/images/manifest.json">
+<meta name="theme-color" content="#171417">
+
+<!-- Social-preview defaults remain useful even without an X/Twitter account. -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta name="twitter:description" content="{{ page.description | default: site.description | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta name="twitter:image" content="{{ site.og_image | prepend: '/images/' | prepend: site.url }}">
+<meta name="twitter:image:alt" content="{{ site.og_image_alt }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.title | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.name | jsonify }},
+    "jobTitle": "PhD candidate",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Northwestern University"
+    }
+  }
+}
+</script>

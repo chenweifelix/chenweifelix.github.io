@@ -1,0 +1,28 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+description: "Manuscripts and journal articles by Felix (Chen-Wei) Yu."
+author_profile: true
+redirect_from:
+  - /blog/publication/publication/
+---
+
+<p class="page-intro">
+  Manuscripts are grouped by publication status; links lead to the full paper when available.
+  If you would like to read a paper but cannot access it, please don't hesitate to reach out to me directly.
+</p>
+
+{% for category in site.publication_category %}
+  {% assign category_publications = site.publications | where: "category", category[0] | sort: "order" %}
+  {% if category_publications.size > 0 %}
+    <section class="publication-group" aria-labelledby="{{ category[0] }}-heading">
+      <h2 id="{{ category[0] }}-heading">{{ category[1].title }}</h2>
+      <div class="publication-list">
+        {% for publication in category_publications %}
+          {% include publication-card.html publication=publication %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

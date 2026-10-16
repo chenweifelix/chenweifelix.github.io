@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="research-main" role="main">
+  <aside class="research-toc" aria-label="Research sections">
+    <p class="research-toc__title">On this page</p>
+    <nav>
+      <ol>
+        {% for item in page.research_nav %}
+          <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </aside>
+
+  <article class="research-page" aria-labelledby="overview-heading" itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <div class="research-page__content" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </article>
+</div>

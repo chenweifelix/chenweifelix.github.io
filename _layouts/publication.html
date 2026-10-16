@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<main id="main" class="publication-detail" role="main">
+  <article itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <a class="back-link" href="{{ '/publications/' | relative_url }}"><span aria-hidden="true">←</span> All publications</a>
+    <header>
+      <p class="publication-card__meta">
+        <span class="status-label">{{ page.status }}</span>
+        {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+      </p>
+      <h1 itemprop="headline">{{ page.title }}</h1>
+      <p class="publication-detail__authors" itemprop="author">{{ page.authors }}</p>
+      {% if page.venue %}<p class="publication-detail__venue">{{ page.venue }}</p>{% endif %}
+    </header>
+
+    {% if content != empty %}
+      <div class="publication-detail__content" itemprop="description">{{ content }}</div>
+    {% endif %}
+
+    {% if page.paperurl or page.dataurl or page.codeurl %}
+      <div class="publication-actions" aria-label="Publication links">
+        {% if page.paperurl %}
+          <a class="btn btn--primary" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Full paper <span aria-hidden="true">↗</span></a>
+        {% endif %}
+        {% if page.dataurl %}
+          <a class="btn btn--secondary" href="{{ page.dataurl }}" target="_blank" rel="noopener noreferrer">Data <span aria-hidden="true">↗</span></a>
+        {% endif %}
+        {% if page.codeurl %}
+          <a class="btn btn--secondary" href="{{ page.codeurl }}" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <section class="citation-box" aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Citation</h2>
+      {{ page.citation | markdownify }}
+    </section>
+  </article>
+</main>
