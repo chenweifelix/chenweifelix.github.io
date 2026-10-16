@@ -8,8 +8,11 @@ year: 2025
 status: "Published"
 citation: >-
   Yu, C.-W., Chuang, Y.-S., Lotsos, A. N., Meier, T., & Haase, C. M. (2025). The more similar, the better? Associations between latent semantic similarity and emotional experiences differ across conversation contexts. *Journal of Language and Social Psychology*, 0261927X251343096.
-paperurl:
+paperurl: "https://journals.sagepub.com/doi/full/10.1177/0261927X251343096"
+dataurl:
+codeurl:
 doi: "https://doi.org/10.1177/0261927X251343096"
-featured: true
-featured_order: 1
+featured: false
+featured_order:
+detail_page: false
 ---

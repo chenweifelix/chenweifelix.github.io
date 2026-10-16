@@ -4,14 +4,15 @@
     <span class="status-label">{{ publication.status }}</span>
     {% if publication.year %}<span>{{ publication.year }}</span>{% endif %}
   </p>
-  <h3 class="publication-card__title">
-    <a href="{{ publication.url | relative_url }}">{{ publication.title }}</a>
-  </h3>
+  <h3 class="publication-card__title">{{ publication.title }}</h3>
   <p class="publication-card__authors">{{ publication.authors }}</p>
   {% if publication.venue %}<p class="publication-card__venue">{{ publication.venue }}</p>{% endif %}
-  <div class="publication-card__links">
-    <a href="{{ publication.url | relative_url }}">Details</a>
-    {% if publication.paperurl %}<a href="{{ publication.paperurl }}">Preprint or full text <span aria-hidden="true">↗</span></a>{% endif %}
-    {% if publication.doi %}<a href="{{ publication.doi }}">DOI <span aria-hidden="true">↗</span></a>{% endif %}
-  </div>
+  {% if publication.detail_page or publication.paperurl or publication.dataurl or publication.codeurl %}
+    <div class="publication-card__links">
+      {% if publication.detail_page %}<a href="{{ publication.url | relative_url }}">Details</a>{% endif %}
+      {% if publication.paperurl %}<a href="{{ publication.paperurl }}" target="_blank" rel="noopener noreferrer">Full paper <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if publication.dataurl %}<a href="{{ publication.dataurl }}" target="_blank" rel="noopener noreferrer">Data <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if publication.codeurl %}<a href="{{ publication.codeurl }}" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>{% endif %}
+    </div>
+  {% endif %}
 </article>

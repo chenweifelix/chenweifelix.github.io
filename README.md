@@ -47,13 +47,18 @@ year: 2026                # leave blank for unpublished work
 status: "Published"       # or "Under review"
 citation: >-
   Full recommended citation in Markdown.
-paperurl: "https://..."   # preprint or accessible full text; blank if unavailable
-doi: "https://doi.org/..." # blank if unavailable
+paperurl: "https://..."    # full paper or preprint; blank if unavailable
+dataurl: "https://..."     # data repository; blank if unavailable
+codeurl: "https://..."     # code repository; blank if unavailable
+doi: "https://doi.org/..." # retained as metadata; not rendered as a separate link
 featured: false
+detail_page: false         # true generates an individual detail page
 ---
 ```
 
-For a Home-page feature, set `featured: true` and add a numeric `featured_order`. Never add a placeholder publication date to unpublished work.
+For a Home-page feature, set `featured: true` and add a numeric `featured_order`. Set `detail_page: true` only when the publication should have its own page and “Details” link. A missing value is treated as `false`; the record still appears in publication lists, but Jekyll does not generate its detail page or add it to the sitemap. Publication titles are intentionally plain text so visitors open detail pages only through the explicit “Details” link. When present, `paperurl`, `dataurl`, and `codeurl` render “Full paper,” “Data,” and “Code” actions that open in new tabs. Blank fields remain hidden. DOI metadata remains available to citations but is not displayed as a separate action.
+
+Never add a placeholder publication date to unpublished work.
 
 ## Content and presentation
 
@@ -61,7 +66,9 @@ For a Home-page feature, set `featured: true` and add a numeric `featured_order`
 - Navigation is configured in `_data/navigation.yml`.
 - Site/profile metadata is configured in `_config.yml`.
 - Layouts and reusable publication rendering live in `_layouts/` and `_includes/`.
+- External web links and document links use `target="_blank"` with `rel="noopener noreferrer"`; navigation entries such as the CV opt in with `new_window: true` in `_data/navigation.yml`.
 - The site-specific color tokens, responsive layouts, focus styles, and reduced-motion rules live in `_sass/_custom.scss`.
+- Publication-detail title sizing is controlled by `--publication-detail-title-size` near the top of `_sass/_custom.scss`. Adjust the minimum, fluid viewport value, or maximum in its `clamp()` expression to resize those titles later.
 - Theme behavior lives in `assets/js/site.js`; the pre-paint theme initialization is in `_includes/head.html`.
 
 The muted rose accent and both color schemes must maintain readable contrast. Test changes in dark and light modes, at desktop, tablet, and mobile widths.
@@ -72,14 +79,12 @@ Pull requests targeting `main` run `.github/workflows/jekyll-build.yml`, which p
 
 Do not merge the rebuild branch until the local build and pull-request workflow pass and the launch assets below are present. The current production site remains unchanged until that merge.
 
-## Launch assets
+## Profile and CV assets
 
-Two user-supplied files are required before launch:
+- The production headshot is `images/profile.jpg`.
+- The downloadable CV is `files/Felix_Yu_CV.pdf`.
 
-1. Replace `images/profile-placeholder.svg` with a professional headshot at `images/profile.jpg`, then update `author.avatar` and `og_image` in `_config.yml`.
-2. Add the current CV at `files/Felix_Yu_CV.pdf`.
-
-The placeholder portrait is intentionally obvious so it cannot be mistaken for a final asset.
+Replace these files in place when either asset changes so existing page and navigation links remain valid.
 
 ## Validation checklist
 

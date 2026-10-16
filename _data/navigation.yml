@@ -10,3 +10,4 @@ main:
 
   - title: "CV"
     url: /files/Felix_Yu_CV.pdf
+    new_window: true

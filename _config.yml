@@ -12,15 +12,18 @@ timezone: "America/Chicago"
 
 # Profile shown on Home and Publications
 author:
-  avatar: "profile-placeholder.svg"
-  avatar_alt: "Placeholder portrait for Felix (Chen-Wei) Yu"
+  avatar: "profile.jpg"
+  avatar_alt: "Profile picture of Felix (Chen-Wei) Yu"
   name: "Felix (Chen-Wei) Yu"
   bio: "PhD candidate at Northwestern University"
-  employer: "Northwestern University"
+  # employer: "Northwestern University"
   email: "felix.chenwei@u.northwestern.edu"
   github: "chenweifelix"
+  linkedin: "https://www.linkedin.com/in/felix-cwy"
+  google_scholar: "https://scholar.google.com/citations?user=jvCvvukAAAAJ&hl=en"
+  osf: "https://osf.io/35cq2/"
   medium: "https://medium.com/@chenweifelix"
-  cv: "/files/Felix_Yu_CV.pdf"
+  # cv: "/files/Felix_Yu_CV.pdf"
 
 publication_category:
   under_review:
@@ -40,13 +43,16 @@ atom_feed:
   path: "/feed.xml"
 
 # Search/social metadata
-og_image: "profile-placeholder.svg"
+og_image: "profile.jpg"
 og_image_alt: "Felix (Chen-Wei) Yu — emotion and human development researcher"
 og_description: *description
 social:
   type: "Person"
   name: *name
   links:
+    - "https://scholar.google.com/citations?user=jvCvvukAAAAJ&hl=en"
+    - "https://osf.io/35cq2/"
+    - "https://www.linkedin.com/in/felix-cwy"
     - "https://github.com/chenweifelix"
     - "https://medium.com/@chenweifelix"
 analytics:

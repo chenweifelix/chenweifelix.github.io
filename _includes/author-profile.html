@@ -18,21 +18,30 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse" type="button" aria-expanded="false" aria-controls="author-links">Contact and links</button>
     <ul id="author-links" class="author__urls social-icons">
-      {% if author.employer %}
+      <!-- {% if author.employer %}
         <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i><span itemprop="affiliation">{{ author.employer }}</span></li>
-      {% endif %}
+      {% endif %} -->
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}" itemprop="email"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>Email</a></li>
       {% endif %}
+      {% if author.google_scholar %}
+        <li><a href="{{ author.google_scholar }}" itemprop="sameAs" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-google-scholar icon-pad-right" aria-hidden="true"></i>Google Scholar</a></li>
+      {% endif %}
+      {% if author.osf %}
+        <li><a href="{{ author.osf }}" itemprop="sameAs" target="_blank" rel="noopener noreferrer">{% include osf-icon.html %}OSF</a></li>
+      {% endif %}
+      {% if author.linkedin %}
+        <li><a href="{{ author.linkedin }}" itemprop="sameAs" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
+      {% endif %}
       {% if author.github %}
-        <li><a href="https://github.com/{{ author.github }}" itemprop="sameAs"><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>GitHub</a></li>
+        <li><a href="https://github.com/{{ author.github }}" itemprop="sameAs" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>GitHub</a></li>
       {% endif %}
       {% if author.medium %}
-        <li><a href="{{ author.medium }}" itemprop="sameAs"><i class="fab fa-fw fa-medium icon-pad-right" aria-hidden="true"></i>Medium</a></li>
+        <li><a href="{{ author.medium }}" itemprop="sameAs" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-medium icon-pad-right" aria-hidden="true"></i>Medium</a></li>
       {% endif %}
-      {% if author.cv %}
+      <!-- {% if author.cv %}
         <li><a href="{{ author.cv | relative_url }}"><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i>CV</a></li>
-      {% endif %}
+      {% endif %} -->
     </ul>
   </div>
 </div>

@@ -24,7 +24,7 @@
               {% assign link_selected = true %}
             {% endif %}
             <li class="masthead__menu-item {% if link_selected %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+              <a href="{{ domain }}{{ link.url }}"{% if link.new_window %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -39,7 +39,7 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li><a href="{{ domain }}{{ link.url }}"{% if link.new_window %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </details>

@@ -9,12 +9,12 @@ author_profile: false
 - [Home]({{ '/' | relative_url }})
 - [Research]({{ '/research/' | relative_url }})
 - [Publications]({{ '/publications/' | relative_url }})
-- [CV]({{ '/files/Felix_Yu_CV.pdf' | relative_url }})
+- [CV]({{ '/files/Felix_Yu_CV.pdf' | relative_url }}){: target="_blank" rel="noopener noreferrer" }
 
-## Publication records
+## Publication detail pages
 
-{% assign sorted_publications = site.publications | sort: "order" %}
-{% for publication in sorted_publications %}
+{% assign detail_publications = site.publications | where: "detail_page", true | sort: "order" %}
+{% for publication in detail_publications %}
 - [{{ publication.title }}]({{ publication.url | relative_url }})
 {% endfor %}
 

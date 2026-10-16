@@ -8,7 +8,10 @@ redirect_from:
   - /blog/publication/publication/
 ---
 
-<p class="page-intro">My work examines emotion and motivation across individual, interpersonal, and societal contexts. Manuscripts are grouped by publication status; links lead to preprints, full text, or the publisher record when available.</p>
+<p class="page-intro">
+  Manuscripts are grouped by publication status; links lead to the full paper when available.
+  If you would like to read a paper but cannot access it, please don't hesitate to reach out to me directly.
+</p>
 
 {% for category in site.publication_category %}
   {% assign category_publications = site.publications | where: "category", category[0] | sort: "order" %}
