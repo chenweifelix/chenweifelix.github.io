@@ -20,6 +20,7 @@
   --global-accent-soft: #ead9df;
   --global-focus-color: #b45e78;
   --global-shadow: 0 18px 50px rgba(74, 42, 54, 0.08);
+  --page-content-width: 980px;
   --publication-detail-title-size: clamp(1.55rem, 2.8vw, 2.4rem);
 }
 
@@ -53,7 +54,7 @@ html {
 }
 
 body {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: -0.006em;
   margin-bottom: 0 !important;
   padding-bottom: 0;
@@ -199,7 +200,8 @@ html[data-theme="dark"] .btn--primary:hover {
 }
 
 .home-page {
-  max-width: 930px;
+  width: 100%;
+  max-width: var(--page-content-width);
   margin-inline: auto;
 }
 
@@ -335,10 +337,10 @@ html[data-theme="dark"] .btn--primary:hover {
 /* Research */
 .research-main {
   display: grid;
-  grid-template-columns: minmax(185px, 225px) minmax(0, 760px);
+  grid-template-columns: minmax(170px, 190px) minmax(0, var(--page-content-width));
   justify-content: center;
-  gap: clamp(2rem, 6vw, 5rem);
-  width: min(1180px, calc(100% - 2rem));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 5rem) 0 6rem;
 }
@@ -447,6 +449,16 @@ html[data-theme="dark"] .btn--primary:hover {
 }
 
 /* Publications */
+.publications-main > .archive {
+  float: none;
+  width: 100%;
+  max-width: var(--page-content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .page-intro {
   width: 100%;
   max-width: none;
@@ -698,7 +710,7 @@ html[data-theme="dark"] .btn--primary:hover {
 
   .research-main {
     display: block;
-    width: min(720px, calc(100% - 2rem));
+    width: min(var(--page-content-width), calc(100% - 2rem));
   }
 
   .research-toc {
