@@ -43,8 +43,8 @@ atom_feed:
   path: "/feed.xml"
 
 # Search/social metadata
-og_image: "profile.jpg"
-og_image_alt: "Felix (Chen-Wei) Yu — emotion and human development researcher"
+og_image: "favicon.svg"
+og_image_alt: "Felix (Chen-Wei) Yu website logo"
 og_description: *description
 social:
   type: "Person"
