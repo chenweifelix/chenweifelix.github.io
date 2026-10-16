@@ -135,6 +135,10 @@
 
 {% if site.og_image %}
   <meta property="og:image" content="{{ site.og_image | prepend: '/images/' | prepend: seo_url }}">
+  <meta property="og:image:secure_url" content="{{ site.og_image | prepend: '/images/' | prepend: seo_url }}">
+  <meta property="og:image:type" content="{{ site.og_image_type }}">
+  <meta property="og:image:width" content="{{ site.og_image_width }}">
+  <meta property="og:image:height" content="{{ site.og_image_height }}">
   <meta property="og:image:alt" content="{{ site.og_image_alt }}">
 {% endif %}
 
